@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 gem "jekyll", "~> 4.2"
-gem "tufte-crossref-jekyll", "~> 0.12.0.1"
+gem "tufte-crossref-jekyll", "~> 0.12.0.2"
 gem "bibtex-ruby"
 gem "sassc"
 gem "stringex"
