@@ -1,0 +1,69 @@
+# General
+title: 
+author:
+email:
+description: >-
+baseurl: 
+url:
+lang:
+
+# Content
+header_includes:
+  - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  - <script src="https://kit.fontawesome.com/eddf3d9a63.js" crossorigin="anonymous"></script>
+
+# Collections
+collections:
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: index
+
+# Theme
+theme: tufte-crossref-jekyll
+
+# Build parameters
+markdown: Pandoc
+pandoc:
+  extensions:
+    - defaults: "_spec/html.yaml"
+    - csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-note-bibliography-with-ibid.csl"
+    - section-divs
+permalink: pretty
+relative_links:
+  enabled: true
+  collections: true
+sass_dir:
+  load_paths:
+    - _sass
+    - assets
+    - assets/css
+    - assets/css-slides
+    - reveal.js/css/theme/template
+scholar:
+  locale:
+  sort_by: author,editor,year
+  order: ascending,ascending,descending
+  style: "chicago-fullnote-bibliography-with-ibid"
+timezone:
+
+# Plugins
+plugins:
+  - jekyll-gist
+  - jekyll-pandoc
+  - jekyll-relative-links
+  - jekyll-scholar
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Keep and Exclude
+exclude:
+  - LICENSE
+  - Makefile
+  - README.md
+  - "*.fdb_latexmk"
+  - "*.run.xml"
+keep_files:
+  - .git

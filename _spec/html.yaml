@@ -1,0 +1,20 @@
+# Call this defaults file from the Jekyll _config.yaml as:
+# pandoc:
+#   extensions:
+#     - defaults: "_spec/html.yaml"
+from            : "markdown+tex_math_single_backslash"
+bibliography    : "_bibliography/references.bib"
+data-dir        : "_lib"
+email-obfuscation: references
+fail-if-warnings: true
+file-scope      : true
+filters:
+  - pandoc-crossref
+  - citeproc
+  - pandoc-sidenote
+metadata-file: "_metadata.yaml"
+resource-path:
+  - .
+  - "_csl"
+  - "_spec"
+shift-heading-level-by: 1

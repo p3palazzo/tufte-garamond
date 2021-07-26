@@ -1,0 +1,70 @@
+# This is very specific and may not work for every case.
+# Consider thinning down and, for example, creating a font package.
+from            : "markdown+raw_tex"
+to              : "latex"
+bibliography    : "_bibliography/references.bib"
+cite-method     : "citeproc"
+data-dir        : "_lib"
+fail-if-warnings: false
+file-scope      : true
+filters:
+  - pandoc-crossref
+  - citeproc
+metadata-file: "_metadata.yaml"
+metadata:
+  secnumdepth   : 2
+  papersize     : a4
+number-sections : true
+pdf-engine      : xelatex
+resource-path:
+  - .
+  - "_csl"
+  - "_spec"
+standalone      : true
+variables:
+  documentclass : scrartcl
+  fontsize: 11pt
+  header-includes:
+    - \usepackage{academicons}
+    - \usepackage{scrletter}
+    - \usepackage{multicol}
+    - \setlength{\columnsep}{15pt}
+    - \usepackage{csquotes}
+    - \usepackage[overload]{textcase}
+    - \setkomafont{title}{\sffamily}
+    - \RedeclareSectionCommand[font={\rmfamily\normalfont\large\scshape\MakeLowercase}]{paragraph}
+  include-before:
+    - \let\oldsc\textsc
+    - \renewcommand{\textsc}[1]{\oldsc{\MakeLowercase{#1}}}
+    - \setkomafont{backaddress}{\rmfamily}
+    - \setkomafont{descriptionlabel}{\rmfamily\normalfont}
+    - \setkomafont{lettersubject}{\rmfamily\normalfont}
+    - \setkomavar{backaddress}{Pedro P. Palazzo | \textsc{FAU}–UnB | \textsc{ICC} Norte \textsc{ASS}–585/9 | Brasília \textsc{DF} 70910–900}
+    - \setkomavar{fromname}{Pedro P. Palazzo}
+    - \setkomavar{fromemail}[]{palazzo@unb.br | http://labeurbe.unb.br}
+    - \setkomavar{fromlogo}{\XeTeXglyph \XeTeXglyphindex "ass_completa_CONT" \relax}
+    - \setkomavar{fromphone}[]{+55 61 31 07 74 49}
+    - |
+      \setkomavar{signature}{%
+        \\
+        Pedro P. Palazzo%
+      }
+    - |
+      \setkomavar{fromaddress}{%
+        Professor Associado (Associate Professor)\\
+        Laboratório de Estudos da Urbe (LabeUrbe)\\
+        Faculdade de Arquitetura e Urbanismo%
+      }
+    - |
+      \setkomavar{firstfoot}{%
+        \small{FAU/THAU/PP/2021}
+        \hfill
+        \small{\thepage}
+      }
+  polyglossia-otherlangs:
+    - name: english
+    - name: french
+    - name: german
+    - name: italian
+    - name: latin
+    - name: spanish

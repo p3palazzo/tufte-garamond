@@ -1,0 +1,16 @@
+# General settings that should work for most output formats, such as docx.
+bibliography      : "_bibliography/references.bib"
+cite-method       : "citeproc"
+data-dir          : "_lib"
+fail-if-warnings  : false
+file-scope        : true
+filters:
+  - pandoc-crossref
+  - citeproc
+reference-links   : true
+reference-location: "block"
+resource-path:
+  - .
+  - "_csl"
+  - "_spec"
+standalone        : true
